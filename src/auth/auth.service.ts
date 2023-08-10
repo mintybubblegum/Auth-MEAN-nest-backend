@@ -65,10 +65,10 @@ export class AuthService {
 if ( !user ) {
       throw new UnauthorizedException('Not valid credentials - email');
     }
-/*     
+    
     if ( !bcryptjs.compareSync( password, user.password ) ) {
       throw new UnauthorizedException('Not valid credentials - password');
-    } */
+    }
 
     const { password:_, ...rest } = user.toJSON();
 

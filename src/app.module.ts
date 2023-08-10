@@ -8,7 +8,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     ConfigModule.forRoot(),
 
-    MongooseModule.forRoot( 'mongodb://localhost:27017' ),
+    MongooseModule.forRoot( process.env.MONGO_URI ),
 
     AuthModule
   
@@ -17,9 +17,5 @@ import { AuthModule } from './auth/auth.module';
   providers: [],
 })
 export class AppModule {
-
-  constructor(){
-    console.log( process.env.MONGO_URI )
-  }
 
 }
